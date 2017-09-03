@@ -88,7 +88,7 @@ int init_mmc_for_env(struct mmc *mmc)
 
 #ifdef CONFIG_CMD_SAVEENV
 
-inline int write_env(struct mmc *mmc, unsigned long size,
+int write_env(struct mmc *mmc, unsigned long size,
 			unsigned long offset, const void *buffer)
 {
 	uint blk_start, blk_cnt, n;
@@ -120,7 +120,7 @@ int saveenv(void)
 }
 #endif /* CONFIG_CMD_SAVEENV */
 
-inline int read_env(struct mmc *mmc, unsigned long size,
+int read_env(struct mmc *mmc, unsigned long size,
 			unsigned long offset, const void *buffer)
 {
 	uint blk_start, blk_cnt, n;
@@ -159,4 +159,3 @@ static void use_default()
 	set_default_env();
 }
 #endif
-
